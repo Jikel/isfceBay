@@ -4,3 +4,6 @@ commande à retenir:
 	- git commit -m "messageExpliquantLeCommit": lancer un commit avec explication de ce dernier
 	- git status: vérifier l'état du dossier
 	- git log: vérifier l'historique des commit
+
+
+contribution de Anas
