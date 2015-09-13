@@ -1,4 +1,4 @@
-commande à retenir:
+﻿commande à retenir:
 	- git init: initialise un répertoire comme étant un projet git
 	- git add "nomFichier": ajoute le fichier à l'index avant de lancer le commit
 	- git commit -m "messageExpliquantLeCommit": lancer un commit avec explication de ce dernier
@@ -6,4 +6,10 @@ commande à retenir:
 	- git log: vérifier l'historique des commit
 
 
+<<<<<<< HEAD
 contribution de Anas
+=======
+
+
+- Je me trouve dans tuto.txt, aidez-moi sortir d'ici, svp!.
+>>>>>>> 6c407f7bc68341ebdcb19f451778b5deaecc2f75
