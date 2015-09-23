@@ -1,0 +1,8 @@
+
+
+CREATE TABLE "Objet" ("idObjet" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "nomObjet" VARCHAR NOT NULL , "prixInitial" DOUBLE NOT NULL , "prixAchatImmediat" DOUBLE NOT NULL , "dateAjout" DATETIME NOT NULL , "dateCloture" DATETIME NOT NULL , "actifObjet" DATETIME NOT NULL  DEFAULT 1, "fkUtilisateur" INTEGER, "fkCategorie" INTEGER, FOREIGN KEY ("fkUtilisateur") REFERENCES "Utilisateur"("idUtilisateur"), FOREIGN KEY ("fkCategorie") REFERENCES "Categorie"("idCateforie") )
+
+
+CREATE TABLE "Utilisateur" ("idUtilisateur" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , "mail" VARCHAR NOT NULL , "password" VARCHAR NOT NULL , "fkpseudo" VARCHAR NOT NULL, FOREIGN KEY("fkpseudo") REFERENCES "Profil"("pseudo") )
+
+CREATE TABLE "Categorie" ("idCategorie" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "nomCategorie" VARCHAR UNIQUE , "description" TEXT, "actifCategorie" INTEGER NOT NULL  DEFAULT 1)
