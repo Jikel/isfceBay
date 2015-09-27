@@ -1,0 +1,9 @@
+Point essentiel dans l'analyse:
+------------------------------
+
+	- les "actif" dans les tables Objet et Categorie sont-ils vraiment nécessaires ??
+	- la table Objet doit avoir une clé secondaire vers Utilisateur et vers catégorie
+	- la table Categorie ne devrait avoir que deux colonnes
+	- les id (clé primaire) de chaque table devrait être en static pour que chaque fois que l'on crée un objet, tous les autres objets partagent l'id qui s'incrémente au fur et à mesure. De ce fait, il sera plus intelligent de faire "++id;" dans le constructeur des objets.
+	- ne faire qu'une interface console pour le moment car on est très loin de pouvoir faire qqch de correct d'un point de vue graphique
+	- dans la classe Utilisateur de Majdi, la méthode "equal" me semble étrange au niveau de la condition du if: affectation au lieu de comparaison ???
