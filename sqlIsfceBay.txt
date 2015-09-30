@@ -1,8 +1,12 @@
 
 
-CREATE TABLE "Objet" ("idObjet" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "nomObjet" VARCHAR NOT NULL , "descriptionObjet" TEXT, "prixInitial" DOUBLE NOT NULL , "prixAchatImmediat" DOUBLE NOT NULL , "dateAjout" DATETIME NOT NULL , "dateCloture" DATETIME NOT NULL , "actifObjet" DATETIME NOT NULL  DEFAULT 1, "fkUtilisateur" INTEGER, "fkCategorie" INTEGER, FOREIGN KEY ("fkUtilisateur") REFERENCES "Utilisateur"("idUtilisateur"), FOREIGN KEY ("fkCategorie") REFERENCES "Categorie"("idCateforie") )
+CREATE TABLE "Objet" ("idObjet" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "nomObjet" VARCHAR NOT NULL , "descriptionObjet" TEXT, "prixInitial" DOUBLE NOT NULL , "prixAchatImmediat" DOUBLE, "dateAjout" DATETIME NOT NULL , "dateCloture" DATETIME NOT NULL , "etatObjet" INTEGER NOT NULL  DEFAULT 1, "fkUtilisateur" INTEGER, "fkCategorie" INTEGER, FOREIGN KEY ("fkUtilisateur") REFERENCES "Utilisateur"("idUtilisateur"), FOREIGN KEY ("fkCategorie") REFERENCES "Categorie"("idCateforie") )
 
 
-CREATE TABLE "Utilisateur" ("idUtilisateur" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , "mail" VARCHAR NOT NULL , "password" VARCHAR NOT NULL , "fkpseudo" VARCHAR NOT NULL, FOREIGN KEY("fkpseudo") REFERENCES "Profil"("pseudo") )
+CREATE TABLE "Utilisateur" ("idUtilisateur" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , "email" VARCHAR NOT NULL , "password" VARCHAR NOT NULL , "pseudo" VARCHAR NOT NULL)
 
 CREATE TABLE "Categorie" ("idCategorie" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "nomCategorie" VARCHAR UNIQUE)
+
+CREATE TABLE "Enchere" ("idEnchere" INTEGER PRIMARY KEY  NOT NULL , "fkObjet" INTEGER NOT NULL , "participant" INTEGER NOT NULL , "montantEnchere" DOUBLE NOT NULL , "dateEnchere" DATETIME NOT NULL , "enchereGagnante" INTEGER NOT NULL )
+
+CREATE TABLE "Profil" ("idProfil" INTEGER PRIMARY KEY  NOT NULL , "nom" VARCHAR, "prenom" VARCHAR, "dateNaissance" DATE, "sexe" CHAR, "adresse" VARCHAR, "pays" VARCHAR, "fkUtilisateur" INTEGER NOT NULL, FOREIGN KEY ("fkUtilisateur")REFERENCES "Utilisateur"("idUtilisateur") )
